@@ -1,0 +1,286 @@
+[normal] Evaluating the Impact of AI-Based Test Driven on Software Quality and Development Efficiency
+[normal] Author
+[normal] Muhammad Ilyas
+[normal] A Thesis presented for the Degree
+[normal] Master of Science in Software Project Management
+[normal] FAST School of Computing
+FAST National University of Computer and Emerging Science
+[normal] May 2026
+[normal] Supervised by
+Dr. Nazia Nazir
+[Heading 2] Certificate of Approval
+[normal] It is certified that the research work presented in this thesis, entitled “Evaluating the Impact of AI-Based Test Driven on Software Quality and Development Efficiency” was conducted by Muhammad Ilyas
+[normal] Dr. Nazia Nazir
+[normal] No part of this thesis has been submitted anywhere else for any other degree.
+[normal] This project is submitted to the FAST School of Computing (FSC) in partial fulfilment of the requirements for the degree of Master of Science in “Software Project Management” 
+[normal] at the
+[normal] National University of Computer and Emerging Sciences
+[normal] Islamabad, PAKISTAN Karachi Campus
+[normal] 12th May 2026
+[normal] Candidate Name: 	Muhammad Ilyas	Signature: ______________________
+[normal] Examination Committee:
+[normal] Name:  	   		 	Signature: ______________________
+[normal] Designation
+[normal] University
+[normal] Name: 				Signature: ______________________
+[normal] Designation
+[normal] University
+[normal] Supervisor:
+[normal] Name: 		Dr. Nazia Nazir	Signature: ______________________
+[normal]    Designation:  	    
+[normal] Head of the Department, Fast School of Computing (FSC), National University of Computer and Emerging Sciences, Karachi
+[Heading 2] Author Declaration
+[normal] I, Muhammad Ilyas, hereby state that my MS thesis titled Evaluating the Impact of AI-Based Test Driven on Software Quality and Development Efficiency is my work and it has not been previously submitte
+[normal] 
+Muhammad Ilyas
+
+Date:    12th May 2026	
+[Heading 2] Plagiarism Undertaking
+[normal] I take full responsibility for the research work conducted during the MS Thesis titled Evaluating the Impact of AI-Based Test Driven on Software Quality and Development Efficiency. I solemnly declare 
+[normal] I understand that the management of National University of Computer and Emerging Sciences has a zero-tolerance policy towards plagiarism. Therefore, I as an author of the above-mentioned thesis, solem
+[normal] I further understand that if I am found guilty of any form of plagiarism in my thesis work even after my graduation, the University reserves the right to revoke my MS degree. Moreover, the University 
+[normal] Muhammad Ilyas
+
+Date:   12th May 2026
+[Heading 1] Abstract
+[normal] Test-Driven Development is widely recognized for improving software reliability through incremental testing and continuous verification; however, its adoption in practice remains limited due to the si
+[normal] Using standardized development tasks and identical functional requirements, the study evaluates each approach across multiple dimensions of software quality coverage, mutation score, defect density, t
+[normal] Overall, the findings demonstrate that AI-based TDD can enhance development efficiency but must be complemented with human supervision to achieve acceptable software quality. The study provides empiri
+[normal] Dedication
+[normal] I dedicate this thesis to the most important people in my life, without whose unwavering support and sacrifice this journey would not have been possible.
+[normal] To my late father Haji Bashir Ahmed, whose strength, resilience, and endless love shaped me into who I am today. His struggles and sacrifices continue to inspire me, and it is his memory that keeps me
+[normal] To my mother, who raised me with love, patience, and wisdom. Her constant support, guidance, and belief in me have been a beacon of light throughout my academic journey. From our humble beginnings in 
+[normal] To my spouse, who has been my greatest source of support. Her tireless dedication to our family, especially as she managed our two children single-handedly, has allowed me to focus on my academic work
+[normal] This thesis is a tribute to their love, strength, and unwavering belief in me.
+[normal] Acknowledgement 
+[normal] I would like to express my deepest gratitude to my supervisor, Dr. Nazia Nazir, for her exceptional guidance, support, and mentorship throughout my thesis work. Her expertise and insightful feedback h
+[normal] Her dedication to my academic growth and her willingness to always lend a helping hand, whether in providing clarity on complex concepts or offering thoughtful advice, have made this journey much more
+[normal] This thesis would not have been possible without her unwavering support, and I am deeply grateful for all the time and effort she invested in guiding me. Thank you, Dr. Nazia Nazir, for being such an 
+[Heading 1] Table of Contents
+[normal] List of Tables
+[normal] Table 1 - Classified Data (Time, LOC, Assertions)……………………………………………...12
+[normal] Table II – Classified Metrics Data……………………………………………………………….13
+[normal] List of Figures
+[normal] Figure 1 - Fully Automated Pattern …………………………………………………………..…11
+[normal] Figure II - Classified data (Manual and AI………………………………………………….…...12
+[normal] Figure III Comparative Analysis of Software Quality and Efficiency Matrix……………..……13
+[Heading 1] List of Abbreviation 
+[normal]  Introduction
+[normal] Test-Driven Development is a widely adopted software engineering practice known for improving code quality through incremental testing, refactoring, and continuous verification. Despite its advantages
+[normal] The study introduces an AI-Based Test Driven Development (AI-TDD) framework that integrates LLMs into different stages of the TDD workflow, including test case generation, test script development, cod
+[normal] To assess performance, several evaluation criteria are used, including: the number of generated test cases, assertion quality, cyclomatic complexity, defect density, LOC, execution errors, and time re
+[normal] Preliminary findings indicate that AI-based TDD significantly reduces development time by automating repetitive tasks and producing rapid test–code cycles. The fully automated AI-TDD approach demonstr
+[normal] Motivation
+[normal] Although TDD is widely appreciated for its ability to guide design and improve code reliability, its adoption remains inconsistent due to the practical challenges developers face when applying it. Wri
+[normal] Problem Statement
+[normal] Even though TDD is known to improve software quality, its consistent application is hindered by the overhead associated with designing and maintaining tests. With the emergence of AI tools that can ge
+[Heading 3] Structure of the Thesis
+[normal] Chapter 2: Literature Review
+[normal] Chapter 3: Research Methodology
+[normal] Chapter 4: Proposed work
+[normal] Chapter 5: Results & Comparative Analysis (focus on ensemble)
+[normal] Chapter 6: Conclusion
+[normal] Chapter 7: Future Work
+[Heading 1] Literature Review
+[normal] Wang et al. (2024) – “Software Testing with Large Language Models: Survey, Landscape, and Vision”
+[normal] This TSE survey maps how LLMs are being used across testing tasks such as unit-test generation, oracle inference, fault localization, and repair. It highlights fast progress but emphasizes uneven evid
+[normal] Yang et al. (ASE 2024) – “On the Evaluation of Large Language Models in Unit Test Generation”
+An empirical study across 17 real Java projects and multiple open-source LLMs analyzes prompt factors and 
+[normal] Mock et al. (2024) – “Generative AI for Test-Driven Development: Preliminary Results”
+This early exploration positions GenAI inside TDD cycles, comparing collaborative vs. more automated patterns usin
+[normal] Paduraru & coauthors (2025) – “Agentic AI for Behavior-Driven Development Testing Using Large Language Models”\
+[normal] Proposes BDDTestAIGen: an LLM-agent pipeline that turns Gherkin scenarios into executable tests with human checkpoints. It argues this can lower effort and scale stakeholder involvement but notes ambi
+[normal] Cernosek et al. (2024) – “Increasing Test Coverage by Automating BDD Tests in Proofs of Concepts (POCs) Using LLM”
+[normal] Presents AutoDevSuite, which generates automated tests from user stories and acceptance criteria. Results indicate notable coverage expansion in a POC context. The gap is reproducibility on large, evo
+[normal] Santos et al. (2024) – “Using Behavior-Driven Development (BDD) for Non-Functional Requirements”
+A case study showing BDD can capture and automate performance-related NFRs by mapping ISO/IEC/IEEE 2501
+[normal] Li et al. (2024/2025) – “Evaluating Large Language Models for Software Testing”
+Introduces an evaluation framework that benchmarks LLM testing capabilities against manual testing, focusing on test gen
+[normal] Zhang et al. (2025) – “Large Language Models for Unit Testing: A Systematic Literature Review”
+Synthesizes 100+ papers up to March 2025 on LLM-based unit testing. It calls for realistic, open benchmar
+[normal] Dakhel et al. (2022) – “Assessing the Quality of GitHub Copilot’s Code Generation”
+While slightly earlier than the LLM-testing boom, this peer-reviewed study evaluates Copilot code quality and raises 
+[normal] Research Questions
+[normal] The study addresses the following research questions:
+[normal] RQ1: How does AI-based TDD affect software quality compared to manual TDD?
+RQ2: Does AI-based TDD improve development efficiency in terms of time and effort?
+RQ3: Which interaction model manual, fully
+[Heading 1]  Research Methodology
+[normal] The research adopts a controlled experimental approach involving a series of structured development tasks completed under both manual TDD and AI-assisted TDD conditions. Each task includes a clearly d
+[normal] To assess maintainability and test reliability, a planned requirement modification is introduced during the experiment. Both workflows must adapt their existing tests and implementation to accommodate
+[normal] Data collection was carried out at MSE Technology, where professional software engineers participated in structured development tasks under both manual TDD and AI-assisted TDD workflows. All quality m
+[normal] Background and Proposed work
+[normal] A number of recent studies have explored AI-generated test cases, iterative development support, and automated testing. Mock et al [4]. conducted one of the earliest experiments automating TDD interac
+[normal] Research into AI-assisted programming more broadly highlights increased productivity but also increased risk of subtle defects and incorrect assumptions. Existing work tends to focus on isolated tasks
+[normal] Figure 1 – Fully Automated Pattern
+[Heading 1] Result and Discussion
+[normal] Table 1 - Classified Data (Time, LOC, Assertions)
+[normal] Observation: AI (F1) is much faster but produces very few tests. This matches the published findings that AI speeds up development but sacrifices completeness.
+[normal] Figure II – Classified data (Manual and AI)
+[Heading 2] Classified Metric Data 
+[normal] Table 1 — Classified Data (Time, LOC, Assertions)
+[normal] 
+Observation: AI-TDD reduces development time by 48.5% compared to Manual TDD but results in the fewest mean iterations (5.7). Hybrid mode balances high assertion counts (8.6) with a moderate time eff
+[normal] Table II — Classified Metrics Data
+[normal] 
+Observation: While AI-TDD achieves the highest coverage (93.3%), its mutation score (38.4%) is lower than both Manual and Hybrid modes, indicating shallower test quality. Hybrid AI-Assisted TDD maxim
+[normal] Table II – Classified Metrics Data
+[normal] Figure III Comparative Analysis of Software Quality and Efficiency Matrix
+[Heading 2] Statistical Analysis
+[normal] Below is pre-written analysis text you can directly paste into the Results & Discussion chapter.
+[normal] STATISTICAL ANALYSIS
+[normal] I. MEAN DEVELOPMENT TIME
+[normal] The mean development time for the experiment was calculated using the formula μ = (Σx_i) / n. For the Manual TDD mode, the total time consumed across 10 participants was 266.00 minutes, yielding a mea
+[normal] Interpretation: Fully AI-TDD achieved a 48.50% reduction in development time relative to the Manual baseline. Hybrid AI-Assisted TDD also demonstrated substantial efficiency gains, reducing developmen
+[normal] II. VARIANCE AND STANDARD DEVIATION OF TIME
+[normal] Consistency in development performance was measured through variance (σ²) and standard deviation (σ). Manual TDD exhibited the highest spread (σ² = 162.49, σ = 12.75), suggesting that manual performan
+[normal] Interpretation: The lower standard deviation in AI-TDD compared to Manual TDD indicates that AI-based automation partially "levels" the speed of development, though individual developer oversight in H
+[normal] III. PAIRED COMPARISON
+[normal] To evaluate the statistical significance of these efficiency gains, a paired-sample t-test was conducted, justified by the paired nature of the experimental design where the same participant group com
+[normal] Interpretation: The extremely low p-values and high effect sizes provide robust evidence that AI-based TDD, whether fully automated or hybrid, significantly alters the temporal dynamics of the softwar
+[normal] IV. TEST COMPLETENESS
+[normal] Test completeness was evaluated through the mean number of tests and assertions. Manual TDD produced a mean of 5.70 tests and 8.40 assertions. Fully AI-TDD produced 4.10 tests and 5.20 assertions, whi
+[normal] Interpretation: This data highlights a clear speed-vs-thoroughness trade-off. While AI-TDD is the fastest mode, it produced the lowest number of assertions, suggesting a "minimalist" approach to testi
+[normal] V. MUTATION SCORE COMPARISON
+[normal] The quality of the test oracles was measured via Mutation Score. Manual TDD achieved a mean of 48.40% (σ = 5.13). Fully AI-TDD achieved a lower score of 38.40% (σ = 3.13), despite having the highest r
+[normal] Interpretation: The lower mutation score in Fully AI-TDD, despite high coverage, indicates the presence of "shallow oracles" where AI generates broad test coverage but lacks the logical depth to detec
+[normal] VI. DEFECT DENSITY
+[normal] The software quality was further assessed via mean defects identified per task. Manual TDD resulted in 3.60 defects, whereas Fully AI-TDD saw an increase to 7.20 defects. Hybrid TDD resulted in the lo
+[normal] Interpretation: These results address RQ5 regarding the necessity of human supervision. The spike in defects for Fully AI-TDD suggests that AI-based automation introduces subtle logic errors that are 
+[normal] VII. INTERPRETATION SUMMARY
+[normal] In conclusion, the statistical analysis reveals a tiered performance model. Fully AI-TDD wins on speed (RQ1) but fails on quality (RQ2), creating a high-defect, shallow-test environment. Manual TDD pr
+[normal] IV. Mean Development Time 
+[normal] The recorded development times for Manual TDD were:
+[normal] AI-TDD (Fully Automated F1): 12 minutes
+[normal] Interpretation: AI-TDD is approximately 65% faster than manual TDD in the experiment.
+[Heading 2] Variance of Development Time
+[normal] Manual TDD variance = high (indicates unstable developer performance.)
+AI-TDD variance = 0 (AI performs consistently ,but produces minimal tests).
+[normal] Interpretation: Humans show variation in speed; AI is fast but produces shallow outputs.
+[normal] Test Completeness Trend
+[normal] Manual TDD - More functions, more edge cases
+AI-TDD - Fewer tests, incomplete coverage
+[normal] This statistically suggests:
+[normal] AI optimizes for speed, not thoroughness.
+[normal] Manual TDD optimizes for correctness, not speed.
+[Heading 2] Mutation Score Comparison 
+[normal] Manual: 45%
+AI: 55%
+[normal] Interpretation: Even when AI achieves high coverage, mutation score is lower, showing weaker bug detection.
+[normal] Conclusion and Future Work
+[normal] This project aims to provide a systematic and evidence-based understanding of how AI-assisted TDD influences software quality and developer productivity. It is expected that AI will reduce development
+[normal] The study will offer guidance on when AI assistance is beneficial and when it may lead to risks such as incomplete tests or hidden defects.
+
+[normal] Future work may extend this research by incorporating more diverse AI models, exploring automated guardrails to prevent incorrect AI-generated test modifications, studying long-term test suite evoluti
+[Heading 1] Bibliography
+[normal] [1] Cernosek, M., Novak, P., & Hudec, R. (2024). Increasing test coverage by automating TDD tests in proofs of concept (POCs) using LLMs. IEEE Access.
+[normal] [2] Dakhel, S., Abdallah, M., & McMillan, C. (2022). Assessing the quality of GitHub Copilot’s code generation. Proceedings of the IEEE/ACM 44th International Conference on Software Engineering.
+[normal] [3] Li, Y., Chen, M., & Zhao, L. (2024). Evaluating large language models for software testing. Empirical Software Engineering.
+[normal] [4] Mock, M., Riccio, V., Panichella, S., & Gall, H. (2025). Generative AI for Test-Driven Development: Preliminary Results. Proceedings of the International Conference on Software Engineering.
+[normal] [5] Paduraru, C., Fratila, B., & Sandu, A. (2025). Agentic AI for Behavior-Driven Development Testing Using Large Language Models. ACM Transactions on Software Engineering and Methodology.
+[normal] [6] Santos, R., Silva, T., & Souza, E. (2024). Using Behavior-Driven Development for non-functional requirements: A case study based on ISO/IEC/IEEE 25010. Journal of Systems and Software.
+[normal] [7] Wang, J., Liu, B., & Yu, Z. (2024). Software testing with large language models: Survey, landscape, and vision. IEEE Transactions on Software Engineering.
+[normal] [8] Yang, Z., Ren, D., & Lin, W. (2024). On the evaluation of large language models in unit test generation. Proceedings of the ASE 2024 Conference.
+[normal] [9] Zhang, Y., Huang, J., & Zhou, L. (2025). Large language models for unit testing: A systematic literature review. Information and Software Technology.
+[normal] [10] IEEE Software Engineering Body of Knowledge (SWEBOK). (2024). Software testing chapter.
+[Heading 1] APPENDICES
+[Heading 2] Appendix A  - Experimental Task Specifications
+ Entries:
+[normal] A.1: Arithmetic Module
+[normal] A.2: Credential Validator
+[normal] A.3: Requirement Change Scenario
+[normal] Appendix B - AI Prompt Templates Used
+Sections:
+[normal] B.1 Test Generation Prompt
+[normal] B.2 Code Generation Prompt
+[normal] B.3 Refactoring Prompt
+[normal] Appendix C - Raw Experimental Data
+[normal] Full, unprocessed data including:
+[normal] Development time logs
+[normal] LOC tables
+[normal] Mutation score output
+[normal] Cognitive load surveys
+[normal] Appendix E - Statistical Computation Procedures
+Complexity:
+[normal] Mean
+[normal] Variance
+[normal] Mutation score formula
+[normal] Appendix F - Screenshots and Workflow Diagrams
+[normal] Include images of:
+[normal] AI-TDD iteration cycles
+[normal] Test failures
+[normal] Mutation tool output
+[normal] Requirement modification impacts
+
+[normal] 5. Proposed Work
+[normal] 6. Results & Comparative Analysis
+[Heading 1] 5. Results and Discussion
+[Heading 2] 5.1 Dataset Overview
+[normal] The empirical foundation of this study is a controlled experiment involving 10 professional software engineers from MSE Technology (Pakistan). The participants, representing a cross-section of experie
+[Heading 2] 5.2 Classified Data — Time, LOC, Assertions
+[normal] The temporal performance and development throughput across the three modes are summarized in Table 1. Initial analysis reveals a stark contrast in development speed when AI automation is introduced.
+[normal] Table 1 — Classified Data (Time, LOC, Assertions)
+[normal] Figure II — Grouped comparison of mean development metrics across experimental modes.
+[normal] As shown in Figure II, the transition from Manual TDD to Fully AI-TDD results in a dramatic reduction in mean time (26.6 min vs. 13.7 min) and mean iterations (25.2 vs. 5.7). This suggests that AI ser
+[Heading 2] 5.3 Classified Metrics — Quality Indicators
+[normal] To understand the quality trade-offs inherent in these efficiency gains, Table II summarizes the core software quality and complexity metrics. These indicators provide a more granular view of the tech
+[normal] Table II — Classified Metrics Data
+[normal] The quality data highlights a divergence between structural coverage and semantic robustness. Fully AI-TDD achieved peak code coverage (93.3%) but also the highest defect rate (7.2 per task), confirmi
+[Heading 2] 5.4 Comparative Quality–Efficiency Analysis
+[normal] Figure III — Spider plot illustrating the trade-off matrix between speed, quality, and cognitive load.
+[normal] Figure III provides a holistic visualization of the trade-off triangle. The 'Manual' polygon is characterized by high cognitive load and low speed, whereas the 'AI-TDD' polygon expands aggressively to
+[normal] This visualization reinforces the argument that peak software quality is not a byproduct of full automation, but rather a result of an augmented workflow where AI handles breadth (coverage) and humans
+[Heading 2] 5.5 Statistical Analysis
+[normal] STATISTICAL ANALYSIS
+[normal] I. MEAN DEVELOPMENT TIME
+The mean development time for the experiment was calculated using the formula μ = (Σx_i) / n. For the Manual TDD mode, the total time consumed across 10 participants was 266.0
+[normal] Interpretation: Fully AI-TDD achieved a 48.50% reduction in development time relative to the Manual baseline. Hybrid AI-Assisted TDD also demonstrated substantial efficiency gains, reducing developmen
+[normal] II. VARIANCE AND STANDARD DEVIATION OF TIME
+Consistency in development performance was measured through variance (σ²) and standard deviation (σ). Manual TDD exhibited the highest spread (σ² = 162.49, 
+[normal] Interpretation: The lower standard deviation in AI-TDD compared to Manual TDD indicates that AI-based automation partially "levels" the speed of development, though individual developer oversight in H
+[normal] III. PAIRED COMPARISON
+To evaluate the statistical significance of these efficiency gains, a paired-sample t-test was conducted, justified by the paired nature of the experimental design where the sam
+[normal] Interpretation: The extremely low p-values and high effect sizes provide robust evidence that AI-based TDD, whether fully automated or hybrid, significantly alters the temporal dynamics of the softwar
+[normal] IV. TEST COMPLETENESS
+Test completeness was evaluated through the mean number of tests and assertions. Manual TDD produced a mean of 5.70 tests and 8.40 assertions. Fully AI-TDD produced 4.10 tests an
+[normal] Interpretation: This data highlights a clear speed-vs-thoroughness trade-off. While AI-TDD is the fastest mode, it produced the lowest number of assertions, suggesting a "minimalist" approach to testi
+[normal] V. MUTATION SCORE COMPARISON
+The quality of the test oracles was measured via Mutation Score. Manual TDD achieved a mean of 48.40% (σ = 5.13). Fully AI-TDD achieved a lower score of 38.40% (σ = 3.13),
+[normal] Interpretation: The lower mutation score in Fully AI-TDD, despite high coverage, indicates the presence of "shallow oracles" where AI generates broad test coverage but lacks the logical depth to detec
+[normal] VI. DEFECT DENSITY
+The software quality was further assessed via mean defects identified per task. Manual TDD resulted in 3.60 defects, whereas Fully AI-TDD saw an increase to 7.20 defects. Hybrid TDD
+[normal] Interpretation: These results address RQ5 regarding the necessity of human supervision. The spike in defects for Fully AI-TDD suggests that AI-based automation introduces subtle logic errors that are 
+[normal] VII. INTERPRETATION SUMMARY
+In conclusion, the statistical analysis reveals a tiered performance model. Fully AI-TDD wins on speed (RQ1) but fails on quality (RQ2), creating a high-defect, shallow-tes
+[Heading 2] 5.6 Mapping Results to Research Questions
+[normal] RQ1: Does AI-based TDD significantly improve development efficiency? Yes, Fully AI-TDD reduced development time by 48.5% and Hybrid mode by 29.32% over Manual TDD. These findings provide strong empiri
+[normal] RQ2: What is the impact of full AI automation on code quality and defect rates? Full automation results in a quality decline, with defects doubling from 3.6 to 7.2 per task. As observed by Yang et al.
+[normal] RQ3: Can a Hybrid AI-Assisted model provide a superior trade-off between speed and quality? Yes, Hybrid TDD achieved the highest mutation score (58.3%) and lowest defect density (2.2) while remaining 
+[normal] RQ4: How does AI integration influence the cognitive load of developers during TDD? Hybrid TDD reduced mean cognitive load from 5.0 (Manual) to 3.9, while Fully AI-TDD dropped to 2.0. This suggests th
+[normal] RQ5: Is human supervision required to maintain test oracle robustness in AI-TDD? Yes, the mutation score gap between Fully AI-TDD (38.4%) and Hybrid TDD (58.3%) demonstrates that human oversight is es
+[Heading 2] 5.7 Threats to Validity
+[normal] Internal Validity: The paired experimental design controlled for individual participant variance. However, a potential threat is the 'carry-over effect,' where learning from the manual session might h
+[normal] External Validity: The study was conducted at a single site (MSE Technology, Pakistan) using a single task (Login Service). While the participants represent a diverse skill set, the results may not ge
+[normal] Construct Validity: The metrics used (e.g., Churn as a proxy for LOC, Mutation Score for quality) are standard in literature but may not capture the full nuance of software maintainability. The use of
+[normal] Conclusion Validity: With a sample size of n=30 across three modes, the statistical power is sufficient for the observed large effect sizes (Cohen's d > 2.0). However, the variance in AI performance i
+[Heading 2] 5.8 Discussion Summary
+[normal] In summary, Chapter 5 demonstrates that while AI-TDD provides an unprecedented acceleration of the TDD cycle, it creates a quality deficit characterized by shallow tests and logic errors. The findings
+[normal] 7. Future Work
+[Heading 1] 6. Conclusion and Future Work
+[Heading 2] 6.1 Summary of Findings
+[normal] This research provided a rigorous empirical evaluation of the impact of AI-based Test-Driven Development (TDD) on software quality and development efficiency. The results from the study of 10 professi
+[normal] In contrast, the Hybrid AI-Assisted mode demonstrated the most balanced performance profile. It achieved a 29.32% reduction in development time (μ = 18.80 min) while simultaneously reaching the peak m
+[Heading 2] 6.2 Answers to Research Questions
+[normal] RQ1: AI-based TDD provides a statistically significant improvement in development efficiency, with Fully AI-TDD and Hybrid modes reducing completion time by 48.5% and 29.3% respectively.
+[normal] RQ2: Full AI automation negatively impacts code quality by increasing defect density and producing 'shallow' test suites that fail to detect semantic mutations.
+[normal] RQ3: The Hybrid AI-Assisted model provides a superior trade-off, achieving higher quality metrics than Manual TDD while remaining significantly faster than traditional methods.
+[normal] RQ4: AI integration significantly reduces the cognitive load of developers, with the Hybrid mode providing a balanced mental workload that supports thoroughness without the fatigue of manual coding.
+[normal] RQ5: Human supervision is a non-negotiable requirement for maintaining the robustness of test oracles, as evidenced by the 20% mutation score gap between supervised and unsupervised AI modes.
+[Heading 2] 6.3 Recommendations
+[normal] Based on these empirical findings, the study recommends a contextual application of AI-TDD modes. Fully AI-TDD is highly recommended for rapid prototyping, internal utility development, and scenarios 
+[Heading 2] 6.4 Limitations
+[normal] The findings of this study are subject to several limitations. The sample size was constrained to 10 participants (30 sessions total), which, while sufficient for observing large effect sizes, may not
+[Heading 2] 6.5 Future Work
+[normal] Future research will aim to expand the participant cohort to include multiple international sites and a broader range of architectural complexities beyond micro-services. A longitudinal study will be 
+[normal] Additionally, future work should explore the role of Multi-Agent AI systems in TDD, specifically investigating if specialized 'Tester Agents' can close the mutation score gap observed in this study. F
+[normal] References

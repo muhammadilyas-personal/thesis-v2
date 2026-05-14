@@ -1,0 +1,31 @@
+Participants ID,Country,Experience,Role,TDD Level,AI Exp,Mode,Task,Time (min),Iter,Tests,Assert,Coverage %,Defects,Cyclomatic,Churn,Cog Load,Confidence,AI Productivity,AI Error,Challenges,Mutation Score %
+P1,Pakistan,3–5,Software Engineer,Intermediate,Moderate,Manual,Login Service,42,38,9,12,78,4,6,25,7,High,No,No,Time-consuming,52
+P2,Pakistan,6–10,Full Stack,Expert,Advanced,Manual,Login Service,25,27,6,9,86,2,5,34,5,High,Yes,No,Prompt tuning,51
+P3,Pakistan,0–2,QA Engineer,Beginner,Basic,Manual,Login Service,14,10,3,5,88,5,4,45,3,Medium,Yes,Yes,Wrong test cases,43
+P4,Pakistan,10+,Software Engineer,Expert,Moderate,Manual,Login Service,48,41,10,13,75,3,7,22,8,High,No,No,High effort,57
+P5,Pakistan,3–5,Full Stack,Intermediate,Advanced,Manual,Login Service,22,26,5,8,87,2,5,37,5,High,Yes,No,Edge cases,47
+P6,Pakistan,0–2,QA Engineer,Beginner,Basic,Manual,Login Service,13,9,2,4,89,6,3,48,3,Medium,Yes,Yes,Incorrect logic,43
+P7,Pakistan,6–10,Software Engineer,Expert,Advanced,Manual,Login Service,26,29,6,9,85,2,5,33,5,High,Yes,No,Minor fixes,50
+P8,Pakistan,3–5,Full Stack,Intermediate,Moderate,Manual,Login Service,40,36,8,11,77,3,6,26,7,High,No,No,Slow iterations,50
+P9,Pakistan,0–2,QA Engineer,Beginner,Basic,Manual,Login Service,12,8,2,3,90,7,3,50,2,Low,Yes,Yes,Poor coverage logic,40
+P10,Pakistan,6–10,Software Engineer,Expert,Advanced,Manual,Login Service,24,28,6,10,86,2,4,35,5,High,Yes,No,Refinement needed,51
+P11,Pakistan,3–5,Software Engineer,Intermediate,Moderate,AI-TDD,Login Service,22,7,4,5,95,8,3,16,2,Medium,Yes,Yes,Incorrect oracle,39
+P12,Pakistan,6–10,Full Stack,Expert,Advanced,AI-TDD,Login Service,13,7,5,5,93,8,4,17,2,Low,Yes,Yes,Missed edge cases,37
+P13,Pakistan,0–2,QA Engineer,Beginner,Basic,AI-TDD,Login Service,8,7,2,6,93,8,6,18,1,Medium,Yes,Yes,Incorrect oracle,40
+P14,Pakistan,10+,Software Engineer,Expert,Moderate,AI-TDD,Login Service,25,6,5,5,94,7,6,18,3,Medium,Yes,Yes,Incorrect oracle,39
+P15,Pakistan,3–5,Full Stack,Intermediate,Advanced,AI-TDD,Login Service,10,3,4,4,91,4,6,11,2,Medium,Yes,Yes,Missed edge cases,35
+P16,Pakistan,0–2,QA Engineer,Beginner,Basic,AI-TDD,Login Service,7,6,5,6,94,7,3,17,3,Medium,Yes,Yes,Hallucinated assertions,40
+P17,Pakistan,6–10,Software Engineer,Expert,Advanced,AI-TDD,Login Service,14,6,3,4,91,9,3,11,2,Low,Yes,Yes,Missed edge cases,32
+P18,Pakistan,3–5,Full Stack,Intermediate,Moderate,AI-TDD,Login Service,21,6,3,6,96,9,6,14,1,Low,Yes,Yes,Wrong API usage,43
+P19,Pakistan,0–2,QA Engineer,Beginner,Basic,AI-TDD,Login Service,6,3,5,6,96,8,5,22,1,Medium,Yes,Yes,Hallucinated assertions,41
+P20,Pakistan,6–10,Software Engineer,Expert,Advanced,AI-TDD,Login Service,11,6,5,5,90,4,6,12,3,Medium,Yes,Yes,Incorrect oracle,38
+P21,Pakistan,3–5,Software Engineer,Intermediate,Moderate,Hybrid,Login Service,31,21,6,7,91,3,4,25,4,High,Yes,No,Spec clarity,54
+P22,Pakistan,6–10,Full Stack,Expert,Advanced,Hybrid,Login Service,16,22,7,9,88,3,4,32,4,High,Yes,Yes,Prompt refinement,60
+P23,Pakistan,0–2,QA Engineer,Beginner,Basic,Hybrid,Login Service,10,21,7,7,94,3,5,27,3,High,Yes,Yes,Prompt refinement,53
+P24,Pakistan,10+,Software Engineer,Expert,Moderate,Hybrid,Login Service,34,18,9,11,94,3,4,21,3,High,Yes,Yes,Minor edits,66
+P25,Pakistan,3–5,Full Stack,Intermediate,Advanced,Hybrid,Login Service,14,16,6,11,93,1,4,23,4,High,Yes,No,Minor edits,67
+P26,Pakistan,0–2,QA Engineer,Beginner,Basic,Hybrid,Login Service,10,21,8,7,94,2,4,18,3,High,Yes,Yes,Prompt refinement,53
+P27,Pakistan,6–10,Software Engineer,Expert,Advanced,Hybrid,Login Service,17,23,7,9,88,2,4,18,5,High,Yes,No,Context tuning,58
+P28,Pakistan,3–5,Full Stack,Intermediate,Moderate,Hybrid,Login Service,29,25,5,10,88,2,4,27,4,High,Yes,Yes,Reviewing AI output,62
+P29,Pakistan,0–2,QA Engineer,Beginner,Basic,Hybrid,Login Service,10,19,5,7,90,1,5,19,4,High,Yes,Yes,Spec clarity,54
+P30,Pakistan,6–10,Software Engineer,Expert,Advanced,Hybrid,Login Service,17,15,7,8,92,2,5,24,5,High,Yes,Yes,Minor edits,56

@@ -1,0 +1,11 @@
+[248] TABLE
+[332] PARA: Result and Discussion
+[340] TABLE
+[344] TABLE
+[427] PARA: Conclusion and Future Work
+[431] PARA: Bibliography
+[457] PARA: APPENDICES
+[505] PARA: 5. Results and Discussion
+[510] TABLE
+[518] TABLE
+[562] PARA: 6. Conclusion and Future Work
